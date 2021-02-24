@@ -1,0 +1,20 @@
+.container {
+    width: 250px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: rgb(163, 163, 255);
+    box-shadow: 0 0 10px #000;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;  
+    border: 1px solid rgb(88, 88, 88);
+    border-radius: 5px;
+}
+
+.label:not(:last-child) {
+    margin-bottom: 10px;
+}

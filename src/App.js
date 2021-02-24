@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { fetchContacts } from './redux/contacts/contacts-operations';
+import { getFilteredContacts } from './redux/contacts/contacts-selectors';
+
+import Filter from './Components/Filter';
+import ContactsList from './Components/ContactsList';
+
 import './App.css';
 
-function App() {
+export default function App() {
+  const contacts = useSelector(getFilteredContacts);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="mainContainer">
+      <Filter />
+      <ContactsList contacts={contacts} />
     </div>
   );
 }
-
-export default App;

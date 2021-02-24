@@ -1,0 +1,11 @@
+.contact {
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgb(163, 163, 255);
+}
+
+.contactDetails {
+    margin: 0 0 5px;
+}
